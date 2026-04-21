@@ -128,23 +128,23 @@
 
                 // ATENCIÓN: ESTAS COORDENADAS SON APROXIMADAS.
                 // Tendrás que ajustarlas midiendo tu Word/Google Doc exportado.
-                page1.drawText(nombreMenor, { x: 180, y: 400, size: 11 }); 
-                page1.drawText(nombreTutor, { x: 90, y: 375, size: 11 });    
+                page1.drawText(nombreMenor, { x: 180, y: 404, size: 11 }); 
+                page1.drawText(nombreTutor, { x: 80, y: 375, size: 11 });    
                 page1.drawText(dniTutor, { x: 400, y: 375, size: 11 }); 
-                page1.drawText(domicilio, { x: 90, y: 354, size: 11 }); 
-                page1.drawText(fechaNacFormat, { x: 455, y: 335, size: 11 }); 
+                page1.drawText(domicilio, { x: 70, y: 354, size: 11 }); 
+                page1.drawText(fechaNacFormat, { x: 453, y: 335, size: 11 }); 
 
                 // Lugar y fecha
-                page1.drawText("Arahal", { x: 160, y: 170, size: 11 }); 
-                page1.drawText(dia, { x: 250, y: 170, size: 11 }); 
-                page1.drawText(mes, { x: 305, y: 170, size: 11 }); 
-                page1.drawText(anio.slice(-1), { x: 426, y: 170, size: 11 }); // Último dígito del año
+                page1.drawText("Arahal", { x: 165, y: 165, size: 11 }); 
+                page1.drawText(dia, { x: 255, y: 165, size: 11 }); 
+                page1.drawText(mes, { x: 305, y: 165, size: 11 }); 
+                page1.drawText(anio.slice(-1), { x: 434, y: 165, size: 11 }); // Último dígito del año
 
                 // Firma e inserción de nombre debajo
                 const signatureImageBytes = signaturePad.toDataURL('image/png');
                 const signatureImage = await pdfDoc.embedPng(signatureImageBytes);
                 
-                page1.drawImage(signatureImage, { x: 250, y: 90, width: 150, height: 75 });
+                page1.drawImage(signatureImage, { x: 245, y: 80, width: 150, height: 75 });
                 page1.drawText(nombreTutor, { x: 250, y: 70, size: 11 });
 
                 const pdfBytes = await pdfDoc.save();
